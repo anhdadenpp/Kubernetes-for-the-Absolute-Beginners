@@ -1,0 +1,11 @@
+Install Docker Desktop 
+Install kubernetes 
++ Install kubectl on Windows with curl : curl.exe -LO "https://dl.k8s.io/release/v1.32.0/bin/windows/amd64/kubectl.exe"
++ Check kubectl install successfully : kubectl version --client 
++ Download and setup minikube : https://github.com/kubernetes/minikube/releases/latest/download/minikube-installer.exe
+Commands Run and check minukube 
++ minikube start
++ minikube pause
++ minikube unpause
++ minikube stop
++ minikube delete --all
