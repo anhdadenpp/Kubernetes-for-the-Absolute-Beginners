@@ -1,0 +1,52 @@
+#1: Introduction: Let us start simple! Given a pod-definition.yml file. We are only getting started with it. I have added two root level properties - apiVersion and kind.
+#2: Introduction: Let us now populate values for each property. Start with apiVersion. 
+#3: Update value of kind to Pod.
+#4: Add a property "name" under metadata with value "myapp-pod". Remember to add a space before 'name' to make it a child of metadata
+#5: Add a property "labels" under metadata with a child property "app" with a value "myapp". Remember to have equal number of spaces before "name" and "labels" so they are siblings
+#6: Add a property containers under spec section. Do not add anything under it yet.
+#7: Containers is an array/list. So create the first element/item in the array/list and add the following properties to it: name - nginx and image - nginx
+#8: Create a Kubernetes Pod definition file using values below: 
+# Name: postgres 
+# Labels: tier => db-tier
+# Container name: postgres
+# Image: postgres
+###############################
+#apiVersion: v1
+#kind: Pod
+#metadata:
+#  name: postgres
+#  labels:
+#    tier: db-tier
+#spec:
+#  containers:
+#    - name: postgres
+#      image: postgres
+################################
+#9: Set an environment variable for the docker container. POSTGRES_PASSWORD with a value mysecretpassword. 
+#I know we haven't discussed this in the lecture, but it is easy. To pass in an environment variable add a new property 'env' to the container object. It is a sibling of image and name. env is an array/list. So add a new item under it. 
+#The item will have properties name and value. name should be the name of the environment variable - POSTGRES_PASSWORD. And value should be the password - mysecretpassword
+################################
+#apiVersion: v1
+#kind: Pod
+#metadata:
+#  name: postgres
+#  labels:
+#    tier: db-tier
+#spec:
+#  containers:
+#    - name: postgres
+#      image: postgres
+#      env:
+#       - name: POSTGRES_PASSWORD
+#         value: mysecretpassword
+################################
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  labels:
+    app: myapp
+spec:
+  containers:
+    - name: nginx
+      image: nginx
