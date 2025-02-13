@@ -1,0 +1,23 @@
+apiVersion: v1        #String
+kind: Pod             #String
+metadata:             #Dictionary
+  name: myapp-pod
+  labels:
+      app: myapp
+      type: front-end
+spec:
+  containers:         #List/Array
+    - name: nginx-container
+      image: nginx
+
+#Command tạo Pod bằng file Yaml : kubectl create -f pod-definition.yaml or kubectl apply -f pod-definition.yaml
+#Check pod : kubectl get pods
+#Describle pod: kubectl describe pod myapp-pod
+#Cách chạy file yaml 
+#1 vim ten_file.yaml
+#2 write code (gõ a để insert)
+#3 Lưu file ( Esc :wq!)
+#4 cat ten_file.yaml để kiểm tra lại 
+#5 chạy command: kubectl apply -f ten_file.yaml
+#6 check: kubectl get pods 
+#7 kiểm tra chi tiết : kubectl describe pod ...
