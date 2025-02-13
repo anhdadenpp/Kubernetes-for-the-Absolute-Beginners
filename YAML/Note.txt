@@ -1,0 +1,14 @@
+Định dạng 
+Servers :
+    -    name: Server1
+         owner: Anhdadenpp
+         created: 02132025
+         status: active
+
+* Chú ý : Lỗi cú pháp khoảng trắng của các thuộc tính 
+
+Distinguish similar and different points Dictionary vs List vs List of Dictionary
++ Dictionary/Map                    + Array/List
+Coder:                              Coder:
+    height: 1.68 m                  -    Short
+    weight: 75 kg                   -    Fat
