@@ -1,0 +1,18 @@
+Kubernetes or K8s
+Container + Orchestration
+
+Container : Môi trường chạy ứng dụng được cô lập chứa mọi thứ cần thiết cho ứng dụng 
+Docker : Nền tảng để đóng gói và chạy ứng dụng trong container
+Docker Image : Template chỉ đọc để tạo container
+Container Orchestration : Quá trình tự động hóa việc triển khai, quản lý và mở rộng các container 
+Orchestration Technologies : Docker Swarm, kubernetes (GG) , MESOS (Apache)
+Cluster : Là tập hợp các node 
+Node : Là 1 máy ảo có thể chạy 1 hoặc nhiều container và được quản lý bởi Master Node
+Kurbenetes gồm :
+ + API Server	        : Cổng giao tiếp, tiếp nhận y/c người dùng 
+ + etcd			: Lưu trữ cấu hình trạng thái 
+ + kubelet		: Nhận y/c từ API Server thực hiện hành động với container
+ + Scheduler		: Lên lịch cho các Pod ( nhóm các container)
+ + Controller		: Quản lý trạng thái
+ + Container Runtime	: Chạy các container ( là Docker)
+kubectl : Command-line tool để tương tác với kubernetes cluster
