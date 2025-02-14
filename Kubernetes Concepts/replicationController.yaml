@@ -1,0 +1,22 @@
+#Replication Controller bản chất là để Load Balancing & Scale 
+#Có thể tạo thêm 1 pod mới , tạo pod mới trên node khác trên cụm cluster
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myapp-rc
+  labels:
+      app: myapp
+      type: front-end
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+          app: myapp
+          type: front-end
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+  replicas: 3
