@@ -1,0 +1,31 @@
+# apps/v1 thường dùng cho  Deployment, ReplicaSet, StatefulSet
+# khi dùng replicaSet yêu cầu thêm thuộc tính selector : Labels Selector
+# có 2 kiểu Labels Selector 
+# 1. Equality-based selectors: labels khớp chính xác với giá trị 
+#  ex: type: Front-end
+# 2. Set-based selectors: đối tượng có labels thuộc tập giá trị 
+#  ex: environment in (production, staging)
+# Có thể edit trực tiếp vào file replicaset bằng cách kubectl edit replicaset ten-replicaset
+# Có thể Scale trực tiếp bằng lệnh : kubectl scale replicaset ten-replicaset --replicaset=2
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-replicaset
+  labels:
+      app: myapp
+      type: front-end
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+          app: myapp
+          type: front-end
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+  replicas: 3
+  selector:
+    matchLabels:
+      type: front-end
