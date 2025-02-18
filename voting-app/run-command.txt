@@ -1,0 +1,20 @@
+1: Trỏ vào thư mục   
+- cd voting-app/ "
+2: Liệt kê các file  :
+- ls
+3: Check lại các pods, service có sẵn
+- kubectl get pods
+- kubectl get svc
+4: Tạo tài nguyên 
+- kubectl create -f voting-app-pod.yaml
+- kubectl create -f voting-app-service.yaml 
+- kubectl create -f redis-pod.yaml
+- kubectl create -f redis-service.yaml
+- kubectl create -f postgres-pod.yaml
+- kubectl create -f postgres-service.yaml
+- kubectl create -f worker-app-pod.yaml
+- kubectl create -f result-app-pod.yaml
+- kubectl create -f result-app-service.yaml
+5: Lấy URL khi sử dụng minikube
+- minikube service voting-service --url
+
