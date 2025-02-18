@@ -3,8 +3,8 @@ kind: Service
 metadata:
   name: result-service
   labels:
-    app: result-service
-    type: demo-voting-app
+    name: result-service
+    app: demo-voting-app
 spec:
   type: NodePort
   ports:
